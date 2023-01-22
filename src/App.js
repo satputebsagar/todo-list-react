@@ -8,13 +8,13 @@ const App = () => {
     "Click on item to Delete"
   ]);
 
-  function addItem(inputText){
+  const addItem = (inputText) => {
     setItems((prevItems)=>{
       return [...prevItems,inputText];
     });
   }
 
-  function deleteItem(id){
+  const deleteItem = (id) => {
     setItems((prevItems)=>{
       return prevItems.filter((item,index)=>{
         return index !==id;
@@ -29,11 +29,11 @@ const App = () => {
       </div>
       <InputArea addItem={addItem}/>
     <div>
-      <ul>
+      <ol>
         {items.map((todoItem,index)=>(
           <TodoItem id={index} text={todoItem} onChecked={deleteItem}/>
         ))}
-      </ul>
+      </ol>
     </div>
     </div>
   )
