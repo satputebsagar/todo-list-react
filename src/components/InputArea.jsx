@@ -4,9 +4,12 @@ const InputArea = (props) => {
 
     const [inputText,setInputText]=useState("");
 
-    function handleChange(e){
+    const handleChange = (e) => {
+
         const newValue=e.target.value;
+
         setInputText(newValue);
+
     }
 
   return (
